@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover your next favourite book at BOOK NOOK.">
+  <title>BOOK NOOK | Every Book Opens a New World</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://covers.openlibrary.org">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Announcement bar -->
+  <div class="announcement">
+    <span>YOUR NEXT GREAT READ AWAITS</span>
+    <span>Free shipping on orders above ₹999!</span>
+  </div>
+
+  <!-- Main navigation -->
+  <header class="header" id="home">
+    <a href="#home" class="logo"><i class="fa-solid fa-book-open"></i>
+      BOOK <span>NOOK</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#shop">Shop Books</a>
+      <a href="#bestsellers">Best Sellers</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="headerSearchBtn" aria-label="Search books">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Open wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="counter" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Open shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="counter" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero banner -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><i class="fa-solid fa-sparkles"></i>
+          A WORLD OF STORIES</span>
+        <h1>FIND YOUR NEXT <span>FAVOURITE BOOK.</span></h1>
+        <p>Explore captivating stories, discover new ideas, and find
+          books that inspire your imagination. Your next great read
+          is just a click away.</p>
+        <div class="hero-buttons">
+          <a href="#shop" class="btn btn-primary">Shop Books
+            <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#categories" class="btn btn-outline">Explore Categories</a>
+        </div>
+        <div class="hero-note">
+          <span><i class="fa-solid fa-book"></i> 20+ Handpicked Books</span>
+          <span><i class="fa-solid fa-heart"></i> Made for Readers</span>
+        </div>
+      </div>
+      <div class="hero-image" role="img"
+        aria-label="Cosy reading corner with books">
+        <div class="hero-image-label">
+          <i class="fa-solid fa-book-open"></i>
+          <div><strong>Stories that stay with you</strong>
+            <small>Find your next chapter.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits container">
+      <div><i class="fa-solid fa-truck-fast"></i>
+        <div><strong>Free Shipping</strong><small>On orders above ₹999</small></div></div>
+      <div><i class="fa-solid fa-book-open-reader"></i>
+        <div><strong>Curated Collection</strong><small>Books for every reader</small></div></div>
+      <div><i class="fa-solid fa-tags"></i>
+        <div><strong>Great Deals</strong><small>Save on selected titles</small></div></div>
+      <div><i class="fa-solid fa-shield-heart"></i>
+        <div><strong>Reader First</strong><small>Shopping made simple</small></div></div>
+    </section>
+
+    <!-- Category navigation -->
+    <section class="section container" id="categories">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE YOUR INTERESTS</span>
+          <h2>Browse by <span>Category</span></h2></div>
+        <a href="#shop" class="text-link">View all books
+          <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <!-- Promotional banner -->
+    <section class="promo container">
+      <div>
+        <span class="eyebrow">A LITTLE SOMETHING FOR YOUR SHELF</span>
+        <h2>Good books. <span>Better prices.</span></h2>
+        <p>Use coupon <strong>READ10</strong> to save 10% on eligible orders.</p>
+        <button class="btn btn-light" id="copyCoupon">Copy Coupon</button>
+      </div>
+      <div class="promo-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+    </section>
+
+    <!-- Best sellers -->
+    <section class="section container" id="bestsellers">
+      <div class="section-heading">
+        <div><span class="eyebrow">READERS' FAVOURITES</span>
+          <h2>Our <span>Best Sellers</span></h2></div>
+        <a href="#shop" class="text-link">Shop collection
+          <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="bestSellerGrid"></div>
+    </section>
+
+    <!-- Shop and filters -->
+    <section class="section shop-section" id="shop">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+            <h2>Discover Your <span>Next Read</span></h2>
+            <p class="section-subtitle">From page-turning fiction to
+              practical guides, find a book for every mood.</p></div>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="search-box" id="searchBox">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="search"
+              placeholder="Search title, author or genre..." aria-label="Search books">
+            <button id="clearSearch" aria-label="Clear search">&times;</button>
+          </div>
+          <select id="categoryFilter" aria-label="Filter category">
+            <option value="All">All Categories</option>
+          </select>
+          <div class="price-filter">
+            <input id="minPrice" type="number" min="0" placeholder="Min ₹"
+              aria-label="Minimum price">
+            <span>–</span>
+            <input id="maxPrice" type="number" min="0" placeholder="Max ₹"
+              aria-label="Maximum price">
+          </div>
+          <select id="sortFilter" aria-label="Sort books">
+            <option value="popular">Popularity</option>
+            <option value="rating">Highest Rated</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="newest">Newest Arrivals</option>
+          </select>
+          <button class="btn btn-outline reset-btn" id="resetFilters">Reset</button>
+        </div>
+
+        <div class="results-row">
+          <p id="resultCount" aria-live="polite">Loading books...</p>
+          <div class="quick-filters">
+            <button class="quick-filter active" data-quick="All">All Books</button>
+            <button class="quick-filter" data-quick="Trending">Trending</button>
+            <button class="quick-filter" data-quick="New">New Arrivals</button>
+            <button class="quick-filter" data-quick="Offers">Special Offers</button>
+            <button class="quick-filter" data-quick="Wishlist">My Wishlist</button>
+          </div>
+        </div>
+        <div class="product-grid" id="bookGrid"></div>
+        <div class="empty-state hidden" id="noResults">
+          <i class="fa-solid fa-book-open"></i>
+          <h3>No books found</h3>
+          <p>Try another search or change your filters.</p>
+          <button class="btn btn-primary" id="emptyReset">Show All Books</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter container">
+      <div class="newsletter-icon"><i class="fa-regular fa-envelope"></i></div>
+      <div class="newsletter-text">
+        <span class="eyebrow">LETTERS FOR BOOK LOVERS</span>
+        <h2>A good read, delivered to your inbox.</h2>
+        <p>Get book recommendations, new arrivals and exclusive offers.</p>
+      </div>
+      <form id="newsletterForm" class="newsletter-form">
+        <label class="sr-only" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" type="email"
+          placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+        <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- About -->
+    <section class="section about-section" id="about">
+      <div class="container about-content">
+        <div class="about-visual">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <span>Every book opens a new world.</span>
+        </div>
+        <div>
+          <span class="eyebrow">OUR STORY</span>
+          <h2>For the love of <span>reading.</span></h2>
+          <p>BOOK NOOK is a reader-first bookstore created to make
+            discovering your next favourite book simple and enjoyable.
+            Whether you love thrilling mysteries, inspiring biographies,
+            magical adventures or practical learning, there is something
+            waiting for you here.</p>
+          <p>Our college-project demonstration brings together book
+            discovery, a wishlist and a working sample shopping cart
+            in one easy-to-use experience.</p>
+          <a href="#shop" class="btn btn-primary">Explore the Collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact and footer -->
+    <section class="section container contact-section" id="contact">
+      <div class="section-heading">
+        <div><span class="eyebrow">WE'RE HERE TO HELP</span>
+          <h2>Let's <span>Talk Books</span></h2>
+          <p class="section-subtitle">Have a question? Send us a message.</p></div>
+      </div>
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div><label for="contactName">Your name</label>
+            <input id="contactName" type="text" minlength="2"
+              maxlength="70" required placeholder="Enter your name"></div>
+          <div><label for="contactEmail">Email address</label>
+            <input id="contactEmail" type="email" required
+              placeholder="you@example.com"></div>
+        </div>
+        <div><label for="contactSubject">Subject</label>
+          <input id="contactSubject" type="text" maxlength="100"
+            required placeholder="How can we help?"></div>
+        <div><label for="contactMessage">Message</label>
+          <textarea id="contactMessage" rows="4" minlength="5"
+            maxlength="1000" required placeholder="Write your message..."></textarea></div>
+        <button class="btn btn-primary" type="submit">Send Message
+          <i class="fa-solid fa-paper-plane"></i></button>
+        <p id="contactFeedback" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo"><i class="fa-solid fa-book-open"></i>
+          BOOK <span>NOOK</span></a>
+        <p>Every Book Opens a New World.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"
+            aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div><h3>Explore</h3>
+        <a href="#shop">Shop All Books</a>
+        <a href="#categories">Categories</a>
+        <a href="#bestsellers">Best Sellers</a>
+        <a href="#shop" data-footer-filter="New">New Arrivals</a></div>
+      <div><h3>Customer Care</h3>
+        <a href="#contact">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#shop">Special Offers</a>
+        <a href="#cartPanel" id="footerCartLink">Shopping Cart</a></div>
+      <div><h3>Get in Touch</h3>
+        <p><i class="fa-regular fa-envelope"></i> hello@booknook.example</p>
+        <p><i class="fa-solid fa-location-dot"></i> India</p>
+        <p><small>Sample contact information for a student project.</small></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> BOOK NOOK. Made for book lovers.</p>
+      <p>Front-end shopping demonstration. No real payments are processed.</p>
+    </div>
+  </footer>
+
+  <!-- Cart overlay and sidebar -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="side-panel" id="cartPanel" aria-label="Shopping cart"
+    aria-hidden="true">
+    <div class="panel-header">
+      <div><h2>Your Shopping Cart</h2><p id="cartSubtitle">0 books</p></div>
+      <button class="close-btn" data-close aria-label="Close cart">&times;</button>
+    </div>
+    <div class="panel-body">
+      <div id="cartItems"></div>
+      <div class="empty-state hidden" id="emptyCart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Your cart is waiting</h3>
+        <p>Find a book that speaks to you.</p>
+        <button class="btn btn-primary" id="continueShopping">Continue Shopping</button>
+      </div>
+    </div>
+    <div class="cart-summary" id="cartSummary">
+      <div class="shipping-progress"><p id="shippingMessage"></p>
+        <div class="progress-track"><div id="shippingProgress"></div></div></div>
+      <form id="couponForm" class="coupon-form">
+        <input id="couponInput" type="text" placeholder="Coupon code"
+          aria-label="Coupon code">
+        <button type="submit" class="btn btn-outline">Apply</button>
+      </form>
+      <p id="couponMessage" class="form-message" aria-live="polite"></p>
+      <div class="total-line"><span>Subtotal</span><strong id="subtotal">₹0.00</strong></div>
+      <div class="total-line"><span>Discount</span><strong id="discount">−₹0.00</strong></div>
+      <div class="total-line"><span>Shipping</span><strong id="shipping">₹0.00</strong></div>
+      <div class="total-line grand-total"><span>Total</span><strong id="grandTotal">₹0.00</strong></div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <button class="clear-cart-btn" id="clearCart">Clear entire cart</button>
+      <small>Demo checkout only. No payment will be taken.</small>
+    </div>
+  </aside>
+
+  <!-- Wishlist sidebar -->
+  <aside class="side-panel" id="wishlistPanel" aria-label="Wishlist"
+    aria-hidden="true">
+    <div class="panel-header">
+      <div><h2>Your Wishlist</h2><p id="wishlistSubtitle">0 saved books</p></div>
+      <button class="close-btn" data-close aria-label="Close wishlist">&times;</button>
+    </div>
+    <div class="panel-body">
+      <div id="wishlistItems" class="wishlist-list"></div>
+      <div class="empty-state hidden" id="emptyWishlist">
+        <i class="fa-regular fa-heart"></i>
+        <h3>Your wishlist is empty</h3>
+        <p>Save books you would love to read.</p>
+        <button class="btn btn-primary" id="browseWishlist">Browse Books</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Book details modal -->
+  <div class="modal-wrap" id="detailsModal" role="dialog"
+    aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true">
+    <div class="modal-card details-card">
+      <button class="close-btn modal-close" data-close aria-label="Close details">&times;</button>
+      <div id="detailsContent"></div>
+    </div>
+  </div>
+
+  <!-- Checkout demonstration modal -->
+  <div class="modal-wrap" id="checkoutModal" role="dialog"
+    aria-modal="true" aria-labelledby="checkoutTitle" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-btn modal-close" data-close aria-label="Close checkout">&times;</button>
+      <div id="checkoutContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast messages -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
